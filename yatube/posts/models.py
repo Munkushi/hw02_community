@@ -26,9 +26,11 @@ class Post(models.Model):
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name='group_posts',
+        related_name='posts',
     )
 
 
-class Meta:
-    ordering = ['-pub_date']
+    class Meta:
+        ordering = ('-pub_date',)
+        verbose_name = 'Пост'
+        verbose_name_plural = 'Посты'
